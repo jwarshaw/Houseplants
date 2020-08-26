@@ -1,0 +1,42 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #79d2a6;
+    padding: 0px;
+  
+    .container {
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .navbar-brand {
+        color: #FFF;
+        font-size: 2.2rem;
+
+        &:hover {
+            color: #FFF;
+        }
+
+        &:focus {
+            color: #FFF;
+        }
+    }
+}
