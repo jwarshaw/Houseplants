@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('houseplants', 'HouseplantController@index');
+Route::post('houseplants', 'HouseplantController@store');
+Route::get('houseplants/{id}', 'HouseplantController@show');
+Route::delete('houseplants/{id}', 'HouseplantController@destroy');
