@@ -1,7 +1,7 @@
 ### Houseplants
 
 #### Description
-An simple app for managing plant care. Add plants. Note when you water then, how much water you use, and changes in growth. Track the changes over time.
+An simple app for managing plant care. Add plants. Note when you water, how much water you use, and changes in growth. Track the changes over time.
 
 #### Possible Updates
 - Add user authentication
