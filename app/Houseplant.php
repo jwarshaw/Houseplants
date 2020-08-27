@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Houseplant extends Model
 {
     protected $fillable = [
-        'name',
-        'recommended_care',
+        "name",
+        "recommended_care",
     ];
 
     public function notes()
     {
-        return $this->hasMany('App\Note');
+        return $this->hasMany("App\Note");
     }
 }
