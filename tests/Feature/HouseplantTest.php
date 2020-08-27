@@ -14,26 +14,16 @@ class HouseplantTest extends TestCase
     public function testIndex()
     {
         factory(Houseplant::class)->create([
-            "nickname" => "Fiddle-leaf Propagation 1",
-            "common_name" => "Fiddle-leaf Fig",
-            "latin_name" => "Ficus lyrata",
-            "birthday" => "",
-            "soil" => "Regular plant soil. Well draining.",
-            "light" => "Bright indirect light to full sun",
+            "name" => "Fiddle-leaf fig",
             "recommended_care" => "Allow soil to dry completely between watering. Water thoroughly but make sure soil is well draining. Use fiddle-leaf specific fertilizer. Rotate plant regularly",
         ]);
 
         factory(Houseplant::class)->create([
-            "nickname" => "Fiddle-leaf Propagation 2",
-            "common_name" => "Fiddle-leaf Fig",
-            "latin_name" => "Ficus lyrata",
-            "birthday" => "",
-            "soil" => "Regular plant soil. Well draining.",
-            "light" => "Bright indirect light to full sun",
-            "recommended_care" => "Allow soil to dry completely between watering. Water thoroughly but make sure soil is well draining. Use fiddle-leaf specific fertilizer. Rotate plant regularly",
+            "name" => "Chinese Dollar Plant",
+            "recommended_care" => "Water frequently. Propagate often.",
         ]);
 
-        $this->getJson('api/houseplants', ['Accept' => 'application/json'])
+        $this->getJson("/api/houseplants", ["Accept" => "application/json"])
             ->assertStatus(200)
             ->assertJson(["success" => true])
             ->assertJsonStructure(["houseplants" => [
@@ -41,12 +31,7 @@ class HouseplantTest extends TestCase
                     "id",
                     "created_at",
                     "updated_at",
-                    "nickname",
-                    "common_name",
-                    "latin_name",
-                    "birthday",
-                    "soil",
-                    "light",
+                    "name",
                     "recommended_care",
                 ]
             ]]);
@@ -55,28 +40,12 @@ class HouseplantTest extends TestCase
     public function testCreate()
     {
         $houseplant = [
-            "nickname" => "Fiddle-leaf Propagation 1",
-            "common_name" => "Fiddle-leaf Fig",
-            "latin_name" => "Ficus lyrata",
-            "birthday" => "",
-            "soil" => "Regular plant soil. Well draining.",
-            "light" => "Bright indirect light to full sunn",
+            "name" => "Fiddle-leaf fig",
             "recommended_care" => "Allow soil to dry completely between watering. Water thoroughly but make sure soil is well draining. Use fiddle-leaf specific fertilizer. Rotate plant regularly",
         ];
 
-        $this->postJson('api/houseplants', $houseplant, ['Accept' => 'application/json'])
+        $this->postJson("/api/houseplants", $houseplant, ["Accept" => "application/json"])
             ->assertStatus(200)
-            ->assertJson([
-                "houseplant" => [
-                    "name" => "Fiddle-leaf Propagation 1",
-                    "name" => "Fiddle-leaf Fig",
-                    "latin_name" => "Ficus lyrata",
-                    "birthday" => "",
-                    "soil" => "Regular plant soil. Well draining.",
-                    "light" => "Bright indirect light to full sunn",
-                    "recommended_care" => "Allow soil to dry completely between watering. Water thoroughly but make sure soil is well draining. Use fiddle-leaf specific fertilizer. Rotate plant regularly",
-                ],
-                "message" => "Created successfully"
-            ]);
+            ->assertJson(["success" => true]);
     }
 }

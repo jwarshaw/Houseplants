@@ -7,12 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Houseplant::class, function (Faker $faker) {
     return [
-        "nickname" => $faker->name,
-        "common_name" => $faker->name,
-        "latin_name" => $faker->name,
-        "birthday" => $faker->date,
-        "soil" => $faker->sentence,
-        "light" => $faker->sentence,
+        "name" => $faker->name,
         "recommended_care" => $faker->text
     ];
 });
