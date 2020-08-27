@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 class HouseplantCreate extends Component {
     constructor(props) {
         super(props)
-        console.log('HERE')
 
         this.state = {
             name: '',
