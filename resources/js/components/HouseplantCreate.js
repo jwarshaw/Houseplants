@@ -57,6 +57,7 @@ class HouseplantCreate extends Component {
                                             name='name'
                                             value={this.state.name}
                                             onChange={this.handleChange}
+                                            required
                                         />
                                     </div>
                                     <div className='form-group'>

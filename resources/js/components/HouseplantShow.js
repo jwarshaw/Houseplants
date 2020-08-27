@@ -97,6 +97,7 @@ class HouseplantShow extends Component {
                                         className='form-control'
                                         value={this.state.date}
                                         onChange={this.handleNoteChange}
+                                        required
                                     />
                                     <input
                                         type='number'
@@ -105,6 +106,7 @@ class HouseplantShow extends Component {
                                         placeholder='Water (cups)'
                                         value={this.state.water_cups}
                                         onChange={this.handleNoteChange}
+                                        required
                                     />
                                     <input
                                         type='number'
