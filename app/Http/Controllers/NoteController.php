@@ -17,6 +17,11 @@ class NoteController extends Controller
      */
     public function store(Houseplant $houseplant, Request $request)
     {
+        $validatedData = $request->validate([
+            "date" => "required",
+            "water_cups" => "required",
+        ]);
+
         $note = $houseplant->notes()->create([
             "date" => $request->date,
             "water_cups" => $request->water_cups,

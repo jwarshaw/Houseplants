@@ -30,6 +30,10 @@ class HouseplantController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            "name" => "required",
+        ]);
+
         $houseplant = Houseplant::create($request->all());
         
         return response()->json([
@@ -45,7 +49,7 @@ class HouseplantController extends Controller
      */
     public function show(Houseplant $houseplant)
     {
-        $houseplant->load('notes');
+        $houseplant->load("notes");
 
         return response()->json([
             "houseplant" => $houseplant,
