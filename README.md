@@ -5,6 +5,7 @@ An simple app for managing plant care. Add plants. Note when you water, how much
 
 #### Possible Updates
 - Add user authentication
+- More robust testing
 - Built out a more comprehensive note model that tracks pests, pest control applications, light type, soil dampness, etc.
 - Display the data graphically
 - Track daily daylight hours via a weather API
