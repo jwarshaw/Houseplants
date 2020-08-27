@@ -9,3 +9,10 @@ An simple app for managing plant care. Add plants. Note when you water, how much
 - Display the data graphically
 - Track daily daylight hours via a weather API
 - Use historical data trends to send reminder notifications
+
+#### Relevant filepaths
+Models - app/
+Controllers - app/HTTP/Controllers/
+Routes - routes/api.php
+Views - resources/js/components/
+Tests - tests/Feature/
