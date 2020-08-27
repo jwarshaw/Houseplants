@@ -40,12 +40,12 @@ class HouseplantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Request  $request
+     * @param  \App\Houseplant  $houseplant
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Houseplant $houseplant)
     {
-        $houseplant = Houseplant::find($request->id);
+        $houseplant->load('notes');
 
         return response()->json([
             "houseplant" => $houseplant,
@@ -56,12 +56,11 @@ class HouseplantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Request  $request
+     * @param  \App\Houseplant  $houseplant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Houseplant $houseplant)
     {
-        $houseplant = Houseplant::find($request->id);
         $houseplant->delete();
 
         return response()->json([
