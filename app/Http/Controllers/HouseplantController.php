@@ -34,7 +34,10 @@ class HouseplantController extends Controller
             "name" => "required",
         ]);
 
-        $houseplant = Houseplant::create($request->all());
+        $houseplant = Houseplant::create([
+            "name" => $request->name,
+            "recommended_care" => $request->recommended_care,
+        ]);
         
         return response()->json([
             "success" => true
