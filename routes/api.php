@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('houseplants', 'HouseplantController@index');
 Route::post('houseplants', 'HouseplantController@store');
-Route::get('houseplants/{id}', 'HouseplantController@show');
-Route::delete('houseplants/{id}', 'HouseplantController@destroy');
+Route::get('houseplants/{houseplant}', 'HouseplantController@show');
+Route::delete('houseplants/{houseplant}', 'HouseplantController@destroy');
+Route::post('houseplants/{houseplant}/notes', 'NoteController@store');
+Route::delete('notes/{note}', 'NoteController@destroy');

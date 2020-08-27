@@ -10,4 +10,9 @@ class Houseplant extends Model
         'name',
         'recommended_care',
     ];
+
+    public function notes()
+    {
+        return $this->hasMany('App\Note');
+    }
 }
